@@ -59,7 +59,7 @@ $$
 该公式可以看作积分分部公式
 
 $$
-\int u dv = uv-\int v du
+\int u \\mathrm{d}v = uv-\int v \\mathrm{d}u
 $$
 
 在离散情形下的对应形式。
