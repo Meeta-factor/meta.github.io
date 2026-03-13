@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<div id="searchModal" class="search-modal" aria-hidden="true" data-index-url="{{ "index.json" | absLangURL }}">
+<div id="searchModal" class="search-modal" aria-hidden="true" data-index-url="{{ "index.json" | relLangURL }}">
   <div class="search-modal-backdrop"></div>
   <div class="search-modal-panel" role="dialog" aria-modal="true" aria-labelledby="searchModalInput">
     <div class="search-modal-bar">

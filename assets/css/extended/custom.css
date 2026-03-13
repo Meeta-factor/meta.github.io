@@ -12,8 +12,8 @@ body.list .main {
   max-width: 1480px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: clamp(10px, 2vw, 20px);
+  padding-right: clamp(10px, 2vw, 20px);
 }
 
 body.list .main .profile {
@@ -59,7 +59,7 @@ body.list .profile .profile_inner {
   width: min(980px, 100%);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(220px, 310px) minmax(320px, 1fr);
+  grid-template-columns: minmax(220px, 31%) minmax(0, 1fr);
   grid-template-areas:
     "image title"
     "image subtitle"
@@ -228,7 +228,12 @@ body.list .profile .buttons a.button:active {
   }
 
   body.list .profile .buttons {
+    flex-wrap: wrap;
     justify-content: center;
+  }
+
+  body.list .profile .buttons a.button {
+    width: auto;
   }
 }
 
@@ -245,7 +250,7 @@ body.list .profile .buttons a.button:active {
 #left-toc {
   position: sticky;
   top: 90px;
-  width: 280px;
+  width: clamp(220px, 22vw, 280px);
   max-height: calc(100vh - 120px);
   overflow: auto;
   padding: 12px 14px;
@@ -273,12 +278,12 @@ body.list .profile .buttons a.button:active {
 /* Full-width article pages */
 body:not(.list) .main {
   max-width: 100%;
-  padding-left: 28px;
-  padding-right: 28px;
+  padding-left: clamp(14px, 2.4vw, 28px);
+  padding-right: clamp(14px, 2.4vw, 28px);
 }
 
 .post-content {
-  max-width: 1400px;
+  width: min(1400px, 100%);
   margin-left: auto;
   margin-right: auto;
 }
@@ -289,11 +294,36 @@ body:not(.list) .main {
   }
 
   #left-toc {
-    display: none;
+    position: static;
+    top: auto;
+    width: 100%;
+    max-height: none;
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    overflow: auto;
+    border-radius: 14px;
   }
 
   .post-content {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  #left-toc {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  #left-toc .toc {
+    margin: 0;
+  }
+
+  #left-toc #TableOfContents,
+  #left-toc .toc .inner {
+    max-height: 42vh;
+    overflow: auto;
   }
 }
 
@@ -379,6 +409,13 @@ body:not(.list) .main {
   border-right: 0;
 }
 
+.post-content table:not(.highlighttable) {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 [data-theme="dark"] .post-content table:not(.highlighttable) th,
 [data-theme="dark"] .post-content table:not(.highlighttable) td {
   border-right-color: rgba(170, 190, 210, 0.45);
@@ -395,7 +432,7 @@ body:not(.list) .main {
 }
 
 .header .nav {
-  gap: 16px;
+  gap: clamp(10px, 1.5vw, 16px);
 }
 
 .header .logo {
@@ -408,7 +445,7 @@ body:not(.list) .main {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 18px;
+  gap: clamp(10px, 1.8vw, 18px);
   margin-left: auto;
   min-width: 0;
 }
@@ -417,6 +454,7 @@ body:not(.list) .main {
   margin: 0;
   min-width: 0;
   align-items: center;
+  gap: clamp(12px, 1.8vw, 24px);
 }
 
 .header-search {
@@ -424,16 +462,16 @@ body:not(.list) .main {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  width: clamp(148px, 11vw, 180px);
+  width: clamp(148px, 14vw, 188px);
   min-width: 0;
-  max-width: 180px;
+  max-width: 188px;
   height: 34px;
   padding: 0 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 11px;
-  background: rgba(14, 18, 28, 0.92);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-  color: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 8px 20px rgba(15, 23, 42, 0.05);
+  color: rgba(15, 23, 42, 0.68);
   white-space: nowrap;
   overflow: hidden;
   box-sizing: border-box;
@@ -441,9 +479,9 @@ body:not(.list) .main {
 }
 
 .header-search:hover {
-  border-color: rgba(255, 255, 255, 0.14);
-  background: rgba(18, 23, 35, 0.96);
-  color: rgba(255, 255, 255, 0.78);
+  border-color: rgba(74, 120, 255, 0.18);
+  background: rgba(255, 255, 255, 0.96);
+  color: rgba(15, 23, 42, 0.82);
 }
 
 .header-search-icon {
@@ -475,7 +513,7 @@ body:not(.list) .main {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(15, 23, 42, 0.72);
 }
 
 .header-search-kbd {
@@ -485,10 +523,10 @@ body:not(.list) .main {
   flex: 0 0 auto;
   min-height: 22px;
   padding: 0 8px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 7px;
-  background: rgba(255, 255, 255, 0.035);
-  color: rgba(255, 255, 255, 0.78);
+  background: rgba(15, 23, 42, 0.04);
+  color: rgba(15, 23, 42, 0.74);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -497,7 +535,7 @@ body:not(.list) .main {
 
 .header-search > span {
   position: relative;
-  top: -11px;
+  top: -16px;
 }
 
 .search-modal {
@@ -529,7 +567,7 @@ body:not(.list) .main {
 
 .search-modal-panel {
   position: relative;
-  width: min(980px, calc(100vw - 32px));
+  width: min(980px, calc(100vw - clamp(24px, 4vw, 40px)));
   max-height: min(72vh, 760px);
   overflow: auto;
   padding: 18px;
@@ -625,7 +663,7 @@ body:not(.list) .main {
 
 .search-modal-link {
   display: block;
-  padding: 14px 16px;
+  padding: clamp(12px, 2vw, 16px);
 }
 
 .search-modal-item-top {
@@ -884,7 +922,7 @@ body.search-modal-open {
 
 .search-result-body {
   position: relative;
-  padding: 18px 20px;
+  padding: clamp(14px, 2vw, 20px);
 }
 
 .search-result-top {
@@ -930,16 +968,23 @@ body.search-modal-open {
   border-color: rgba(255, 255, 255, 0.08);
   background: rgba(14, 18, 28, 0.92);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.68);
 }
 
 [data-theme="dark"] .header-search:hover {
   border-color: rgba(255, 255, 255, 0.14);
   background: rgba(18, 23, 35, 0.96);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+[data-theme="dark"] .header-search-text {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 [data-theme="dark"] .header-search-kbd {
   border-color: rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.035);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 [data-theme="dark"] .search-hero-inner {
@@ -1009,31 +1054,94 @@ body.search-modal-open {
 @media (max-width: 960px) {
   .header .nav {
     gap: 14px;
+    align-items: center;
   }
 
   .nav-right {
     gap: 12px;
+    flex: 1;
+    min-width: 0;
   }
 
   .header-search {
     width: auto;
   }
+
+  .nav-right #menu {
+    gap: 14px;
+  }
 }
 
 @media (max-width: 680px) {
+  body:not(.list) .main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  body.list .main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  body.list .main .profile {
+    border-radius: 18px;
+    padding: 16px 12px;
+  }
+
+  body.list .profile .profile_inner h1 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+    text-align: center;
+  }
+
+  body.list .profile .profile_inner > span {
+    max-width: 100%;
+    font-size: 0.96rem;
+    line-height: 1.68;
+    text-align: left;
+  }
+
+  body.list .profile .buttons {
+    width: 100%;
+    gap: 8px;
+  }
+
+  body.list .profile .buttons a.button {
+    width: calc(50% - 4px);
+  }
+
+  body.list .profile .buttons .button-inner {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 12px;
+  }
+
   .header .nav,
   .nav-right {
     flex-wrap: wrap;
   }
 
+  .header .logo {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .nav-right {
     width: 100%;
     justify-content: space-between;
+    gap: 10px;
   }
 
   .nav-right #menu {
     order: 1;
     width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .nav-right #menu::-webkit-scrollbar {
+    display: none;
   }
 
   .header-search {
@@ -1041,6 +1149,10 @@ body.search-modal-open {
     width: 100%;
     max-width: 100%;
     justify-content: flex-start;
+  }
+
+  .header-search > span {
+    top: 0;
   }
 
   .header .logo-switches {
@@ -1093,5 +1205,31 @@ body.search-modal-open {
   .search-modal-hints {
     gap: 10px;
     font-size: 0.82rem;
+  }
+
+  .post-content {
+    font-size: 0.98rem;
+  }
+
+  .post-content .highlight pre {
+    padding: 12px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.list .profile .buttons a.button {
+    width: 100%;
+  }
+
+  .header-search {
+    height: 36px;
+  }
+
+  #left-toc {
+    padding: 9px 10px;
+  }
+
+  .search-modal-panel {
+    max-height: min(78vh, 760px);
   }
 }
