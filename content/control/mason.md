@@ -160,7 +160,7 @@ $\displaystyle \Delta_4 = G_{2} G_{5} G_{8} + 1$
 
 $\displaystyle \textbf{System Determinant}$
 
-$\displaystyle \begin{aligned}\Delta &= 1 - \left(L_1 + L_2 + L_3 + L_4 + L_5 + L_6\right) + \left(L_1 \cdot L_6 + L_4 \cdot L_5\right) \\ &= 1 - \left(- G_{1} G_{3} + G_{1} G_{2} G_{3} G_{4} G_{7} G_{8} + G_{1} G_{2} G_{5} G_{6} + - G_{2} G_{5} G_{8} + - G_{1} G_{6} G_{7} + - G_{2} G_{4}\right)+ \left(G_{1} G_{2} G_{3} G_{4} + G_{1} G_{2} G_{5} G_{6} G_{7} G_{8}\right) \\ &= - G_{1} G_{2} G_{3} G_{4} G_{7} G_{8} + G_{1} G_{2} G_{3} G_{4} + G_{1} G_{2} G_{5} G_{6} G_{7} G_{8} - G_{1} G_{2} G_{5} G_{6} + G_{1} G_{3} + G_{1} G_{6} G_{7} + G_{2} G_{4} + G_{2} G_{5} G_{8} + 1\end{aligned}$
+$\displaystyle \begin{aligned}\Delta &= 1 - \left(L_1 + L_2 + L_3 + L_4 + L_5 + L_6\right) + \left(L_1 \cdot L_6 + L_4 \cdot L_5\right) \\\ &= 1 - \left(- G_{1} G_{3} + G_{1} G_{2} G_{3} G_{4} G_{7} G_{8} + G_{1} G_{2} G_{5} G_{6} + - G_{2} G_{5} G_{8} + - G_{1} G_{6} G_{7} + - G_{2} G_{4}\right)+ \left(G_{1} G_{2} G_{3} G_{4} + G_{1} G_{2} G_{5} G_{6} G_{7} G_{8}\right) \\\ &= - G_{1} G_{2} G_{3} G_{4} G_{7} G_{8} + G_{1} G_{2} G_{3} G_{4} + G_{1} G_{2} G_{5} G_{6} G_{7} G_{8} - G_{1} G_{2} G_{5} G_{6} + G_{1} G_{3} + G_{1} G_{6} G_{7} + G_{2} G_{4} + G_{2} G_{5} G_{8} + 1\end{aligned}$
 
 $\displaystyle \textbf{Transfer Function}$
 
